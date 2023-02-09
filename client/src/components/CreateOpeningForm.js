@@ -4,18 +4,22 @@ import axios from 'axios'
 const CreateOpeningForm = () => {
   const initialState = {
     name: '',
-    master_win: null,
-    master_lose: null,
-    master_draw: null,
+    master_win: '',
+    master_lose: '',
+    master_draw: '',
     notable_players: [],
-    white_moves: [],
-    black_moves: []
+    move_list: []
   }
   const [formState, setFormState] = useState(initialState)
 
   const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
+    if (typeof [event.target.id] === 'array') {
+      event.target.id.push(event.target.value)
+    } else {
+      setFormState({ ...formState, [event.target.id]: event.target.value })
+    }
   }
+  console.log(formState.move_list)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -23,8 +27,14 @@ const CreateOpeningForm = () => {
     setFormState(initialState)
   }
 
+  let movenum = 0
+
+  const addMove = (event) => {
+    movenum++
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <label htmlFor="name">Name:</label>
       <input
         id="name"
@@ -53,6 +63,18 @@ const CreateOpeningForm = () => {
         onChange={handleChange}
         value={formState.master_draw}
       />
+      <label htmlFor="move_list">Move {movenum}</label>
+      <input
+        id="move_list"
+        type="text"
+        onChange={handleChange}
+        value={formState.move_list}
+      />
+
+      <button type="button" onClick={addMove}>
+        Add Move
+      </button>
+
       <button type="submit">Create New Opening</button>
     </form>
   )
