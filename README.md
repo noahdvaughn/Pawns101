@@ -1,8 +1,8 @@
-# 5-Card Draw
+# ♟️ Pawns 101 ♟️
 
 ## Date 1/27/23
 
-## By: Noah Vaughn
+## ♟️ By: Noah Vaughn ♟️
 
 [Trello](https://trello.com/b/bga8bsP1/pawns-101)
 |
