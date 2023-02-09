@@ -13,3 +13,9 @@ router.delete('/delete-player/:id', controllers.deletePlayer)
 router.delete('/delete-opening/:id', controllers.deleteOpening)
 
 module.exports = router
+
+// {
+//   "name": "Noah",
+//   "nationality": "American",
+//   "age": "23"
+// }

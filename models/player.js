@@ -14,9 +14,3 @@ const Player = new Schema(
 )
 
 module.exports = mongoose.model('Player', Player)
-
-// {
-//   "name": "Noah",
-//   "nationality": "American",
-//   "age": "23"
-// }
