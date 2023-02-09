@@ -35,6 +35,18 @@ const getPlayerById = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getOpeningById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const opening = await Opening.findById(id)
+    if (opening) {
+      return res.status(200).json({ opening })
+    }
+    return res.status(404).send('Opening with the specified ID does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 const updatePlayer = async (req, res) => {
   try {
@@ -87,6 +99,7 @@ module.exports = {
   createPlayer,
   createOpening,
   getPlayerById,
+  getOpeningById,
   updatePlayer,
   updateOpening,
   deletePlayer,
