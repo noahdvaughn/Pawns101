@@ -3,32 +3,39 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
-const EditPlayerForm = (props) => {
-  let { playerId } = useParams()
-  const [formState, setFormState] = useState({})
+const EditPlayerForm = () => {
+  // let { playerId } = useParams()
+  // console.log(playerId)
+  let playerId = '63e525ea074396131d829044'
+  const [currentPlayerData, setCurrentPlayerData] = useState({})
 
   useEffect(() => {
     const getPlayerDetails = async () => {
       const response = await axios.get(
         `http://localhost:3001/api/player/${playerId}`
       )
-      setFormState(response.data)
+      // console.log(response.data.player)
+      console.log(response.data.player.name)
+
+      setCurrentPlayerData(response)
+
+      console.log(currentPlayerData)
     }
     getPlayerDetails()
-  }, [playerId])
+  }, [])
 
   const initialState = {
-    name: '',
-    nationality: '',
+    name: currentPlayerData.name,
+    nationality: currentPlayerData.nationality,
     elo: '',
     age: '',
     favorite_opening: ''
   }
+  const [formState, setFormState] = useState(initialState)
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
-  console.log(formState.move_list)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
