@@ -2,27 +2,28 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const CreateOpeningForm = () => {
+  const [invisible, setInvisible] = useState('')
+  const [current_move, setCurrentMove] = useState('')
   const initialState = {
     name: '',
     master_win: '',
     master_lose: '',
     master_draw: '',
     notable_players: [],
-    move_list: '',
-    move_list_array: []
+    move_list: []
   }
   const [formState, setFormState] = useState(initialState)
   const [movenum, setMovenum] = useState(1)
 
   const handleChange = (event) => {
-    if (typeof [event.target.id] === 'array') {
-      event.preventDefault()
-      event.target.id.push(event.target.value)
-    } else {
-      setFormState({ ...formState, [event.target.id]: event.target.value })
-    }
+    event.preventDefault()
+    setFormState({ ...formState, [event.target.id]: event.target.value })
   }
-  console.log(formState.move_list)
+
+  const handleMoveChange = (e) => {
+    e.preventDefault()
+    setCurrentMove(e.target.value)
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -30,12 +31,17 @@ const CreateOpeningForm = () => {
     setFormState(initialState)
   }
 
-  const addMove = () => {
-    formState.move_list_array.push(...formState.move_list)
+  const addMove = (e) => {
+    e.preventDefault()
+    formState.move_list.push(current_move)
     setMovenum(movenum + 1)
+    setCurrentMove('')
+    if (movenum > 9) {
+      setInvisible('invisible')
+      console.log('working')
+    }
   }
-  console.log(formState.move_list)
-  console.log(formState.move_list_array)
+  console.log(invisible)
 
   return (
     <form onSubmit={handleSubmit} className="form">
@@ -67,15 +73,23 @@ const CreateOpeningForm = () => {
         onChange={handleChange}
         value={formState.master_draw}
       />
-      <label htmlFor="move_list">Move {movenum}</label>
+      <label htmlFor="move_list" className={invisible}>
+        Move {movenum}
+      </label>
       <input
-        id="move_list"
+        id="current_move"
         type="text"
-        onChange={handleChange}
-        value={formState.move_list}
+        onChange={handleMoveChange}
+        className={invisible}
+        value={current_move}
       />
 
-      <button type="button" id="move_list" onClick={addMove}>
+      <button
+        type="button"
+        id="move_list"
+        className={invisible}
+        onClick={addMove}
+      >
         Add Move
       </button>
 
