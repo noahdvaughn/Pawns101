@@ -8,7 +8,7 @@ const Opening = new Schema(
     master_lose: { type: String },
     master_draw: { type: String },
     notable_players: { type: Array },
-    move_list: { type: String }
+    move_list: { type: Array }
   },
   { timestamps: true }
 )

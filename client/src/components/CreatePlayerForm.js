@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const CreatePlayerForm = () => {
@@ -10,16 +10,40 @@ const CreatePlayerForm = () => {
     favorite_opening: ''
   }
   const [formState, setFormState] = useState(initialState)
+  const [openingResults, setOpeningResults] = useState([])
+
+  useEffect(() => {
+    const getAllOpenings = async () => {
+      const openingResponse = await axios.get(
+        'http://localhost:3001/api/all-openings'
+      )
+      console.log(openingResponse.data.openings)
+      console.log('working')
+      setOpeningResults(openingResponse.data.openings)
+    }
+    getAllOpenings()
+  }, [])
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
-  console.log(formState.move_list)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     await axios.post('http://localhost:3001/api/create-player', formState)
     setFormState(initialState)
+  }
+
+  function ValidButton() {
+    if (formState.name && formState.nationality && formState.age) {
+      return <button type="submit">Create New Player</button>
+    } else {
+      return (
+        <button type="button" disabled>
+          Name, Nationality, and Age are required
+        </button>
+      )
+    }
   }
 
   return (
@@ -58,9 +82,13 @@ const CreatePlayerForm = () => {
         type="text"
         onChange={handleChange}
         value={formState.favorite_opening}
-      ></select>
+      >
+        {openingResults.map((result) => (
+          <option key={result._id}>{result.name}</option>
+        ))}
+      </select>
 
-      <button type="submit">Create New Opening</button>
+      <ValidButton />
     </form>
   )
 }

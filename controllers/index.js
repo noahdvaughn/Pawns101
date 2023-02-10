@@ -23,6 +23,15 @@ const createOpening = async (req, res) => {
     return res.status(500).json({ error: error.message })
   }
 }
+const getAllOpenings = async (req, res) => {
+  try {
+    const openings = await Opening.find()
+    return res.status(200).json({ openings })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getPlayerById = async (req, res) => {
   try {
     const { id } = req.params
@@ -98,6 +107,7 @@ const deleteOpening = async (req, res) => {
 module.exports = {
   createPlayer,
   createOpening,
+  getAllOpenings,
   getPlayerById,
   getOpeningById,
   updatePlayer,

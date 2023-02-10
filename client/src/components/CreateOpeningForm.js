@@ -41,7 +41,17 @@ const CreateOpeningForm = () => {
       console.log('working')
     }
   }
-  console.log(invisible)
+  const ValidButton = () => {
+    if (formState.name && formState.move_list[0]) {
+      return <button type="submit">Create New Opening</button>
+    } else {
+      return (
+        <button type="button" disabled>
+          Name and move 1 are required
+        </button>
+      )
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit} className="form">
@@ -92,8 +102,10 @@ const CreateOpeningForm = () => {
       >
         Add Move
       </button>
-
-      <button type="submit">Create New Opening</button>
+      {formState.move_list.map((move) => (
+        <div key={move}>Move:{move}</div>
+      ))}
+      <ValidButton />
     </form>
   )
 }
