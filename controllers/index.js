@@ -31,6 +31,14 @@ const getAllOpenings = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getAllPlayers = async (req, res) => {
+  try {
+    const players = await Player.find()
+    return res.status(200).json({ players })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 const getPlayerById = async (req, res) => {
   try {
@@ -57,7 +65,7 @@ const getOpeningById = async (req, res) => {
   }
 }
 
-const updatePlayer = async (req, res) => {
+const editPlayer = async (req, res) => {
   try {
     const player = await Player.findByIdAndUpdate(req.params.id, req.body, {
       new: true
@@ -68,7 +76,7 @@ const updatePlayer = async (req, res) => {
   }
 }
 
-const updateOpening = async (req, res) => {
+const editOpening = async (req, res) => {
   try {
     const opening = await Opening.findByIdAndUpdate(req.params.id, req.body, {
       new: true
@@ -108,10 +116,11 @@ module.exports = {
   createPlayer,
   createOpening,
   getAllOpenings,
+  getAllPlayers,
   getPlayerById,
   getOpeningById,
-  updatePlayer,
-  updateOpening,
+  editPlayer,
+  editOpening,
   deletePlayer,
   deleteOpening
 }

@@ -18,7 +18,6 @@ const CreatePlayerForm = () => {
         'http://localhost:3001/api/all-openings'
       )
       console.log(openingResponse.data.openings)
-      console.log('working')
       setOpeningResults(openingResponse.data.openings)
     }
     getAllOpenings()
