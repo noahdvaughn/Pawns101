@@ -9,7 +9,6 @@ const CreateOpeningForm = () => {
     master_win: '',
     master_lose: '',
     master_draw: '',
-    notable_players: [],
     move_list: []
   }
   const [formState, setFormState] = useState(initialState)

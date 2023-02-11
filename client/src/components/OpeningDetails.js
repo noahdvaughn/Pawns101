@@ -9,7 +9,9 @@ const OpeningDetails = () => {
   return (
     <div>
       <h1>{opening.name}</h1>
-      <Link to={`/edit-opening/${opening._id}`}>Edit Opening?</Link>
+      <Link to={`/edit-opening/${opening._id}`} state={{ opening: opening }}>
+        Edit Opening?
+      </Link>
     </div>
   )
 }
