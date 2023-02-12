@@ -8,6 +8,7 @@ import Home from './components/Home'
 import Header from './components/Header'
 import OpeningDetails from './components/OpeningDetails'
 import ViewPlayers from './components/ViewPlayers'
+import PlayerDetails from './components/PlayerDetails'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="opening-details/:id" element={<OpeningDetails />} />
+        <Route path="player-details/:id" element={<PlayerDetails />} />
         <Route path="/view-players" element={<ViewPlayers />} />
         <Route path="/create-opening" element={<CreateOpeningForm />} />
         <Route path="/create-player" element={<CreatePlayerForm />} />

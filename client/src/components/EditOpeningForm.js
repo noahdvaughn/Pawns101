@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams, useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
 
 const EditOpeningForm = () => {
   let navigate = useNavigate()
@@ -35,7 +32,7 @@ const EditOpeningForm = () => {
       formState
     )
     setFormState(initialState)
-    navigate('/listings')
+    await navigate('/')
   }
   const addMove = (e) => {
     e.preventDefault()
@@ -44,16 +41,11 @@ const EditOpeningForm = () => {
     setCurrentMove('')
     if (movenum > 9) {
       setInvisible('invisible')
-      console.log('working')
     }
   }
   const ValidButton = () => {
     if (formState.name && formState.move_list[0]) {
-      return (
-        <Link to={'/'}>
-          <button type="submit">Edit Opening</button>
-        </Link>
-      )
+      return <button type="submit">Edit Opening</button>
     } else {
       return (
         <button type="button" disabled>
@@ -61,6 +53,12 @@ const EditOpeningForm = () => {
         </button>
       )
     }
+  }
+  const deleteOpening = async () => {
+    await axios.delete(
+      `http://localhost:3001/api/delete-opening/${opening._id}`
+    )
+    await navigate('/')
   }
 
   return (
@@ -116,6 +114,7 @@ const EditOpeningForm = () => {
         <div key={move}>Move:{move}</div>
       ))}
       <ValidButton />
+      <button onClick={deleteOpening}>Delete Opening?</button>
     </form>
   )
 }
