@@ -4,10 +4,10 @@ const Header = () => {
     <header>
       <nav className="nav">
         <div className="navItem">
-          <Link to="/">Home</Link>
+          <Link to="/">Openings</Link>
         </div>
         <div className="navItem">
-          <Link to="/view-players">View Players</Link>
+          <Link to="/view-players">Players</Link>
         </div>
         <div className="navItem">
           <Link to="/create-player">Create Player</Link>

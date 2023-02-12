@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const CreateOpeningForm = () => {
+  let navigate = useNavigate()
+
   const [invisible, setInvisible] = useState('')
   const [current_move, setCurrentMove] = useState('')
   const initialState = {
@@ -28,6 +31,7 @@ const CreateOpeningForm = () => {
     event.preventDefault()
     await axios.post('http://localhost:3001/api/create-opening', formState)
     setFormState(initialState)
+    await navigate('/view-openings')
   }
 
   const addMove = (e) => {

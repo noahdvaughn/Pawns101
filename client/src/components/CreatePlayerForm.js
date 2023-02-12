@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const CreatePlayerForm = () => {
+  let navigate = useNavigate()
+
   const initialState = {
     name: '',
     nationality: '',
@@ -31,6 +34,7 @@ const CreatePlayerForm = () => {
     event.preventDefault()
     await axios.post('http://localhost:3001/api/create-player', formState)
     setFormState(initialState)
+    await navigate('/view-players')
   }
 
   function ValidButton() {

@@ -15,8 +15,6 @@ const ViewPlayers = () => {
     getAllPlayers()
   }, [])
 
-  console.log(playerResults)
-
   return (
     <div>
       <h1>View Players</h1>

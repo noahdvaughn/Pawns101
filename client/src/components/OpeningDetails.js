@@ -5,6 +5,18 @@ const OpeningDetails = () => {
   const location = useLocation()
   const { opening } = location.state
 
+  const openingLength = opening.move_list.length
+  let chessUrl = 'https://www.chess.com/explorer?moveList='
+  opening.move_list.forEach((move, index) => {
+    if (index === 0) {
+      chessUrl += move
+    } else {
+      chessUrl += '+' + move
+    }
+  })
+  chessUrl += `&ply=${openingLength}`
+  console.log(chessUrl)
+
   return (
     <div>
       <h1>{opening.name}</h1>
@@ -15,6 +27,7 @@ const OpeningDetails = () => {
       <Link to={`/edit-opening/${opening._id}`} state={{ opening: opening }}>
         Edit Opening?
       </Link>
+      <Link to={`${chessUrl}`}>Not sure where to move next?</Link>
     </div>
   )
 }
