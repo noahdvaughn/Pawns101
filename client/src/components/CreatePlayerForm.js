@@ -51,6 +51,7 @@ const CreatePlayerForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="form">
+      <h1>Create Player</h1>
       <label htmlFor="name">Name:</label>
       <input
         id="name"
