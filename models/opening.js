@@ -9,7 +9,7 @@ const Opening = new Schema(
     master_draw: { type: String },
     notable_players: { type: Array },
     move_list: { type: Array },
-    image_url: { type: String }
+    opening_url: { type: String }
   },
   { timestamps: true }
 )

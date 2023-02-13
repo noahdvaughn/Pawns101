@@ -19,6 +19,14 @@ const OpeningDetails = () => {
     }
   })
 
+  const ImageDisplay = () => {
+    if (opening.opening_url) {
+      return <img src={`${opening.opening_url}`} />
+    } else {
+      return
+    }
+  }
+
   const WinDisplay = () => {
     if (opening.master_win) {
       return <h2>Master's games win percent: {opening.master_win}%</h2>
@@ -47,6 +55,7 @@ const OpeningDetails = () => {
   return (
     <div className="form">
       <h1>{opening.name}</h1>
+      <ImageDisplay />
       <WinDisplay />
       <LoseDisplay />
       <DrawDisplay />

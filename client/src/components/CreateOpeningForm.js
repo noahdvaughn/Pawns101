@@ -12,7 +12,8 @@ const CreateOpeningForm = () => {
     master_win: '',
     master_lose: '',
     master_draw: '',
-    move_list: []
+    move_list: [],
+    opening_url: ''
   }
   const [formState, setFormState] = useState(initialState)
   const [movenum, setMovenum] = useState(1)
@@ -31,7 +32,7 @@ const CreateOpeningForm = () => {
     event.preventDefault()
     await axios.post('http://localhost:3001/api/create-opening', formState)
     setFormState(initialState)
-    await navigate('/view-openings')
+    await navigate('/')
   }
 
   const addMove = (e) => {
@@ -85,6 +86,13 @@ const CreateOpeningForm = () => {
         type="text"
         onChange={handleChange}
         value={formState.master_draw}
+      />
+      <label htmlFor="opening_url">Add Image URL:</label>
+      <input
+        id="opening_url"
+        type="text"
+        onChange={handleChange}
+        value={formState.opening_url}
       />
       <label htmlFor="move_list" className={invisible}>
         Move {movenum}

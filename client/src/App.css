@@ -1,16 +1,27 @@
 body{
   background-color: #181818
 }
-
+.homeBody{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center ;
+}
 .invisible{
   display: none;
 }
 header{
   background-color: #769656;
-}
-nav{
+  height: 3vh;
+  align-items: center;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  transition: all 0.3s;
+}
+header:hover{
+  height: 5vh;
+  transition: all 0.3s;
 }
 .navItem, label{
   color: #FFFFFF;
@@ -38,12 +49,28 @@ h1{
   text-align: center;
 }
 .opening-card{
-  background-color: #404040;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 30vh;
-  height: 30vh;
+  height: 35vh;
+  background-color: #404040;
   border-radius: 2vh;
 }
 .opening-link{
   text-decoration: none;
+  max-width: 30vh;
+  margin: 10px;
+}
+.openingTitle{
+  margin-top: -2vh;
+}
+.openingImage{
+  margin-top: -1.5vh;
+  width: 25vh;
+}
+h2{
+  color: #FFFFFF;
+  text-align: center;
 }

@@ -18,9 +18,11 @@ const Home = () => {
   return (
     <div>
       <h1>Home</h1>
-      {openingResults.map((result) => (
-        <OpeningCard key={result._id} opening={result} />
-      ))}
+      <div className="homeBody">
+        {openingResults.map((result) => (
+          <OpeningCard key={result._id} opening={result} />
+        ))}
+      </div>
     </div>
   )
 }

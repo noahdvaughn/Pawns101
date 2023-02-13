@@ -13,7 +13,8 @@ const EditOpeningForm = () => {
     master_win: opening.master_win,
     master_lose: opening.master_lose,
     master_draw: opening.master_draw,
-    move_list: opening.move_list
+    move_list: opening.move_list,
+    opening_url: opening.opening_url
   }
   const [formState, setFormState] = useState(initialState)
   const [movenum, setMovenum] = useState(1)
@@ -90,6 +91,13 @@ const EditOpeningForm = () => {
         type="text"
         onChange={handleChange}
         value={formState.master_draw}
+      />
+      <label htmlFor="opening_url">Add Image URL:</label>
+      <input
+        id="opening_url"
+        type="text"
+        onChange={handleChange}
+        value={formState.opening_url}
       />
       <label htmlFor="move_list" className={invisible}>
         Move {movenum}
