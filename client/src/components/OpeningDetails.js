@@ -29,9 +29,10 @@ const OpeningDetails = () => {
     }
     getTopPlayers()
   }, [])
+  console.log(topPlayerResults)
 
   const NotablePlayersDisplay = () => {
-    if (topPlayerResults) {
+    if (topPlayerResults != '') {
       return (
         <div>
           <h2>Top Players:</h2>

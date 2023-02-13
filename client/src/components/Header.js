@@ -4,22 +4,22 @@ const Header = () => {
     <header>
       <div>
         <Link to="/" className="navItem">
-          Openings
+          <h3>Openings</h3>
         </Link>
       </div>
       <div>
         <Link to="/view-players" className="navItem">
-          Players
+          <h3>Players</h3>
         </Link>
       </div>
       <div>
         <Link to="/create-player" className="navItem">
-          Create Player
+          <h3>Create Player</h3>
         </Link>
       </div>
       <div>
         <Link to="/create-opening" className="navItem">
-          Create Opening
+          <h3>Create Opening</h3>
         </Link>
       </div>
     </header>

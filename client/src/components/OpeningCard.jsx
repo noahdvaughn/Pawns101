@@ -10,9 +10,6 @@ const OpeningCard = ({opening}) => {
       return <img className='openingImage' src='https://www.chess.com/dynboard?board=green&fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR&piece=neo&size=2'/>
     }
   }
-  console.log(opening.opening_url)
-  
-
   return(
   <Link to={`/opening-details/${opening._id}`} state={{opening: opening}} className='opening-link'>
       <div className='opening-card'>

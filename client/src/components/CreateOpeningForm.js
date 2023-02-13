@@ -45,6 +45,15 @@ const CreateOpeningForm = () => {
       console.log('working')
     }
   }
+  const deleteMove = (e) => {
+    e.preventDefault()
+    formState.move_list.pop()
+    setMovenum(movenum - 1)
+    setCurrentMove('')
+    if (movenum === 1) {
+      setInvisible('invisible')
+    }
+  }
   const ValidButton = () => {
     if (formState.name && formState.move_list[0]) {
       return <button type="submit">Create New Opening</button>
@@ -112,6 +121,14 @@ const CreateOpeningForm = () => {
         onClick={addMove}
       >
         Add Move
+      </button>
+      <button
+        type="button"
+        id="move_list"
+        className={'invisible'}
+        onClick={deleteMove}
+      >
+        Delete Last Move
       </button>
       {formState.move_list.map((move) => (
         <div key={move}>Move:{move}</div>

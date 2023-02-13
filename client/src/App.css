@@ -57,6 +57,16 @@ h1{
   height: 35vh;
   background-color: #404040;
   border-radius: 2vh;
+  transition: all 0.3s;
+
+}
+.opening-card:hover{
+  background-color: #5b5b5b;
+
+  transform: scale(1.1);
+  transition: all 0.3s;
+  text-decoration: white underline;
+
 }
 .opening-link{
   text-decoration: none;
