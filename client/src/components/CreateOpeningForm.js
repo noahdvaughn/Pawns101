@@ -114,22 +114,25 @@ const CreateOpeningForm = () => {
         value={current_move}
       />
 
-      <button
-        type="button"
-        id="move_list"
-        className={invisible}
-        onClick={addMove}
-      >
-        Add Move
-      </button>
-      <button
-        type="button"
-        id="move_list"
-        className={'invisible'}
-        onClick={deleteMove}
-      >
-        Delete Last Move
-      </button>
+      <div className="buttonDiv">
+        <button
+          type="button"
+          id="move_list"
+          className={invisible}
+          onClick={addMove}
+        >
+          + Add Move
+        </button>
+
+        <button
+          type="button"
+          id="move_list"
+          className={movenum === 1 ? 'invisible' : ''}
+          onClick={deleteMove}
+        >
+          - Delete Move
+        </button>
+      </div>
       {formState.move_list.map((move) => (
         <div key={move}>Move:{move}</div>
       ))}

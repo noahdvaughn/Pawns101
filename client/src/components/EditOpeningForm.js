@@ -49,7 +49,7 @@ const EditOpeningForm = () => {
     formState.move_list.pop()
     setMovenum(movenum - 1)
     setCurrentMove('')
-    if ((movenum = 0)) {
+    if (movenum === 0) {
       setInvisible('invisible')
     }
   }
@@ -120,22 +120,25 @@ const EditOpeningForm = () => {
         value={current_move}
       />
 
-      <button
-        type="button"
-        id="move_list"
-        className={invisible}
-        onClick={addMove}
-      >
-        Add Move
-      </button>
-      <button
-        type="button"
-        id="move_list"
-        className={invisible}
-        onClick={deleteMove}
-      >
-        Delete Last Move
-      </button>
+      <div className="buttonDiv">
+        <button
+          type="button"
+          id="move_list"
+          className={invisible}
+          onClick={addMove}
+        >
+          Add Move
+        </button>
+        <button
+          type="button"
+          id="move_list"
+          className={movenum === 1 ? 'invisible' : ''}
+          onClick={deleteMove}
+        >
+          Delete Last Move
+        </button>
+      </div>
+
       {formState.move_list.map((move) => (
         <div key={move}>Move:{move}</div>
       ))}
