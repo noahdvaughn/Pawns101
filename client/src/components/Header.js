@@ -3,17 +3,25 @@ const Header = () => {
   return (
     <header>
       <nav className="nav">
-        <div className="navItem">
-          <Link to="/">Openings</Link>
+        <div>
+          <Link to="/" className="navItem">
+            Openings
+          </Link>
         </div>
-        <div className="navItem">
-          <Link to="/view-players">Players</Link>
+        <div>
+          <Link to="/view-players" className="navItem">
+            Players
+          </Link>
         </div>
-        <div className="navItem">
-          <Link to="/create-player">Create Player</Link>
+        <div>
+          <Link to="/create-player" className="navItem">
+            Create Player
+          </Link>
         </div>
-        <div className="navItem">
-          <Link to="/create-opening">Create Opening</Link>
+        <div>
+          <Link to="/create-opening" className="navItem">
+            Create Opening
+          </Link>
         </div>
       </nav>
     </header>
