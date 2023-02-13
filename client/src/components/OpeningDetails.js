@@ -5,6 +5,7 @@ import axios from 'axios'
 const OpeningDetails = () => {
   const location = useLocation()
   const { opening } = location.state
+  const [topPlayerResults, setTopPlayerResults] = useState([])
 
   const openingLength = opening.move_list.length
   let chessUrl = 'https://www.chess.com/explorer?moveList='
@@ -18,6 +19,31 @@ const OpeningDetails = () => {
       moveDisplay += ', ' + move
     }
   })
+
+  useEffect(() => {
+    const getTopPlayers = async () => {
+      const playerResponse = await axios.get(
+        `http://localhost:3001/api/top-players/${opening.name}`
+      )
+      setTopPlayerResults(playerResponse.data.player)
+    }
+    getTopPlayers()
+  }, [])
+
+  const NotablePlayersDisplay = () => {
+    if (topPlayerResults) {
+      return (
+        <div>
+          <h2>Top Players:</h2>
+          {topPlayerResults.map((result) => (
+            <h2 key={result._id}>{result.name}</h2>
+          ))}
+        </div>
+      )
+    } else {
+      return
+    }
+  }
 
   const ImageDisplay = () => {
     if (opening.opening_url) {
@@ -59,6 +85,7 @@ const OpeningDetails = () => {
       <WinDisplay />
       <LoseDisplay />
       <DrawDisplay />
+      <NotablePlayersDisplay />
       <h2>Moves: {moveDisplay}</h2>
       <Link to={`/edit-opening/${opening._id}`} state={{ opening: opening }}>
         <button>Edit Opening?</button>

@@ -64,6 +64,18 @@ const getOpeningById = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getTopPlayers = async (req, res) => {
+  try {
+    const { id } = req.params
+    const player = await Player.find({ favorite_opening: `${id}` })
+    if (player) {
+      return res.status(200).json({ player })
+    }
+    return res.status(404).send('Opening with the specified ID does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 const editPlayer = async (req, res) => {
   try {
@@ -122,5 +134,6 @@ module.exports = {
   editPlayer,
   editOpening,
   deletePlayer,
-  deleteOpening
+  deleteOpening,
+  getTopPlayers
 }

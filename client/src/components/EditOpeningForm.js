@@ -44,6 +44,16 @@ const EditOpeningForm = () => {
       setInvisible('invisible')
     }
   }
+  const deleteMove = (e) => {
+    e.preventDefault()
+    formState.move_list.pop()
+    setMovenum(movenum - 1)
+    setCurrentMove('')
+    if ((movenum = 0)) {
+      setInvisible('invisible')
+    }
+  }
+
   const ValidButton = () => {
     if (formState.name && formState.move_list[0]) {
       return <button type="submit">Edit Opening</button>
@@ -100,7 +110,7 @@ const EditOpeningForm = () => {
         value={formState.opening_url}
       />
       <label htmlFor="move_list" className={invisible}>
-        Move {movenum}
+        Moves
       </label>
       <input
         id="current_move"
@@ -117,6 +127,14 @@ const EditOpeningForm = () => {
         onClick={addMove}
       >
         Add Move
+      </button>
+      <button
+        type="button"
+        id="move_list"
+        className={invisible}
+        onClick={deleteMove}
+      >
+        Delete Last Move
       </button>
       {formState.move_list.map((move) => (
         <div key={move}>Move:{move}</div>

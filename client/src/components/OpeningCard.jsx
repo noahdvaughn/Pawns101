@@ -16,7 +16,7 @@ const OpeningCard = ({opening}) => {
   return(
   <Link to={`/opening-details/${opening._id}`} state={{opening: opening}} className='opening-link'>
       <div className='opening-card'>
-      <h1 className='openingTitle'>{opening.name}</h1>
+      <h2 className='openingTitle'>{opening.name}</h2>
       <OpeningDisplay/>
       </div>
 

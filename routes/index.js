@@ -7,6 +7,8 @@ router.get('/player/:id', controllers.getPlayerById)
 router.get('/opening/:id', controllers.getOpeningById)
 router.get('/all-openings', controllers.getAllOpenings)
 router.get('/all-players', controllers.getAllPlayers)
+router.get('/top-players/:id', controllers.getTopPlayers)
+
 router.post('/create-player', controllers.createPlayer)
 router.post('/create-opening', controllers.createOpening)
 router.put('/edit-player/:id', controllers.editPlayer)
