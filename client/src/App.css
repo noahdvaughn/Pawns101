@@ -35,10 +35,14 @@ button{
 }
 h1{
   color: #FFFFFF;
+  text-align: center;
 }
 .opening-card{
   background-color: #404040;
   text-decoration: none;
+  width: 30vh;
+  height: 30vh;
+  border-radius: 2vh;
 }
 .opening-link{
   text-decoration: none;

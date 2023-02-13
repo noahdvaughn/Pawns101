@@ -1,33 +1,62 @@
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 const OpeningDetails = () => {
   const location = useLocation()
   const { opening } = location.state
 
   const openingLength = opening.move_list.length
   let chessUrl = 'https://www.chess.com/explorer?moveList='
+  let moveDisplay = ''
   opening.move_list.forEach((move, index) => {
     if (index === 0) {
       chessUrl += move
+      moveDisplay += move
     } else {
       chessUrl += '+' + move
+      moveDisplay += ', ' + move
     }
   })
-  chessUrl += `&ply=${openingLength}`
-  console.log(chessUrl)
 
+  const WinDisplay = () => {
+    if (opening.master_win) {
+      return <h2>Master's games win percent: {opening.master_win}%</h2>
+    } else {
+      return
+    }
+  }
+  const LoseDisplay = () => {
+    if (opening.master_lose) {
+      return <h2>Master's games lose percent: {opening.master_lose}%</h2>
+    } else {
+      return
+    }
+  }
+  const DrawDisplay = () => {
+    if (opening.master_draw) {
+      return <h2>Master's games win percent: {opening.master_draw}%</h2>
+    } else {
+      return
+    }
+  }
+
+  const NotablePlayers = () => {}
+
+  chessUrl += `&ply=${openingLength}`
   return (
-    <div>
+    <div className="form">
       <h1>{opening.name}</h1>
-      <h2>Master's games win percent: {opening.master_win}%</h2>
-      <h2>Master's games lose percent: {opening.master_lose}%</h2>
-      <h2>Master's games draw percent: {opening.master_draw}</h2>
-      <h2>Moves: {opening.move_list}</h2>
+      <WinDisplay />
+      <LoseDisplay />
+      <DrawDisplay />
+      <h2>Moves: {moveDisplay}</h2>
       <Link to={`/edit-opening/${opening._id}`} state={{ opening: opening }}>
-        Edit Opening?
+        <button>Edit Opening?</button>
       </Link>
-      <Link to={`${chessUrl}`}>Not sure where to move next?</Link>
+      <Link to={`${chessUrl}`}>
+        <button>Not sure where to move next?</button>
+      </Link>
     </div>
   )
 }
