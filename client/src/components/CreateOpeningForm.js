@@ -50,19 +50,16 @@ const CreateOpeningForm = () => {
     formState.move_list.pop()
     setMovenum(movenum - 1)
     setCurrentMove('')
-    if (movenum === 1) {
-      setInvisible('invisible')
-    }
   }
   const ValidButton = () => {
     if (formState.name && formState.move_list[0]) {
-      return <button type="submit">Create New Opening</button>
-    } else {
       return (
-        <button type="button" disabled>
-          Name and move 1 are required
+        <button type="submit" className="validButton">
+          Create New Opening
         </button>
       )
+    } else {
+      return <h3>(Name and Move 1 are required)</h3>
     }
   }
 
@@ -134,7 +131,7 @@ const CreateOpeningForm = () => {
         </button>
       </div>
       {formState.move_list.map((move) => (
-        <div key={move}>Move:{move}</div>
+        <h3 key={move}>Move:{move}</h3>
       ))}
       <ValidButton />
     </form>

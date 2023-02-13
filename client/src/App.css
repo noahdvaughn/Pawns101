@@ -73,6 +73,18 @@ h1{
   max-width: 30vh;
   margin: 10px;
 }
+.player-link{
+  max-width: 30vh;
+  transition: all 0.3s;
+
+  text-decoration: none;
+}
+.player-link:hover{
+  text-decoration: white underline;
+  transform: scale(1.1);
+  transition: all 0.1s;
+
+}
 .openingTitle{
   margin-top: -2vh;
 }
@@ -80,7 +92,10 @@ h1{
   margin-top: -1.5vh;
   width: 25vh;
 }
-h2{
+h2, h3{
   color: #FFFFFF;
   text-align: center;
+}
+.validButton{
+  background-color: #769656;
 }

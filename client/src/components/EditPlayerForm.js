@@ -41,6 +41,17 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
     setFormState(initialState)
     await navigate('/view-players')
   }
+  function ValidButton() {
+    if (formState.name && formState.nationality && formState.age) {
+      return (
+        <button type="submit" className="validButton">
+          Confirm Player Update
+        </button>
+      )
+    } else {
+      return <h3>Name, Nationality, and Age are required</h3>
+    }
+  }
 
   const deletePlayer = async () => {
     await axios.delete(`http://localhost:3001/api/delete-player/${player._id}`)
@@ -90,7 +101,7 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
         ))}
       </select>
 
-      <button type="submit">Edit Player</button>
+      <ValidButton />
       <button type="button" onClick={deletePlayer}>
         Delete Player?
       </button>

@@ -39,13 +39,13 @@ const CreatePlayerForm = () => {
 
   function ValidButton() {
     if (formState.name && formState.nationality && formState.age) {
-      return <button type="submit">Create New Player</button>
-    } else {
       return (
-        <button type="button" disabled>
-          Name, Nationality, and Age are required
+        <button type="submit" className="validButton">
+          Create New Player
         </button>
       )
+    } else {
+      return <h3>(Name, Nationality, and Age are required)</h3>
     }
   }
 

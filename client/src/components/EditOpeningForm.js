@@ -49,20 +49,17 @@ const EditOpeningForm = () => {
     formState.move_list.pop()
     setMovenum(movenum - 1)
     setCurrentMove('')
-    if (movenum === 0) {
-      setInvisible('invisible')
-    }
   }
 
   const ValidButton = () => {
     if (formState.name && formState.move_list[0]) {
-      return <button type="submit">Edit Opening</button>
-    } else {
       return (
-        <button type="button" disabled>
-          Name and move 1 are required
+        <button type="submit" className="validButton">
+          Confirm Opening
         </button>
       )
+    } else {
+      return <h4>(Name and move 1 are required)</h4>
     }
   }
   const deleteOpening = async () => {
