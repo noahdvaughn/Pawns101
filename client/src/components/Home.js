@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <div className="topText">
-        <h1>Openings</h1>
+        <h1 className="pageTitle">Openings</h1>
         <h1 className="siteLogo">Pawns ♜o♜</h1>
       </div>
       <div className="homeBody">

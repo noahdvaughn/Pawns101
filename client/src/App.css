@@ -17,6 +17,14 @@ body{
   display: flex;
   justify-content: center;
 }
+.pageTitle{
+  background-color: #769656;
+  border-radius: 10px;
+  padding: 5px;
+  color: #FFFFFF;
+
+  
+}
 .siteLogo{
   right: 10px;
   position: absolute;

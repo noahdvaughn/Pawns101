@@ -40,6 +40,7 @@ const OpeningDetails = () => {
             <Link
               to={`/player-details/${result._id}`}
               state={{ player: result }}
+              style={{ textDecoration: 'white underline' }}
             >
               <h2 key={result._id}>{result.name}</h2>
             </Link>
