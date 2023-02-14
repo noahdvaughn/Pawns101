@@ -89,6 +89,7 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
         value={formState.age}
       />
       <label htmlFor="favorite_opening">Favorite Opening</label>
+
       <select
         id="favorite_opening"
         type="text"

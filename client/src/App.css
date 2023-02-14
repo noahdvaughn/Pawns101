@@ -17,15 +17,14 @@ body{
   display: none;
 }
 header{
+  position: fixed;
   left: 0;
-  position: absolute;
   display: flex;
   flex-direction: column;
   background-color: #769656;
   height: 100vh;
   align-items: flex-start;
   justify-content: space-between;
-  display: flex;
   transition: all 0.3s;
   width: 5vw;
   overflow: hidden;
@@ -37,6 +36,7 @@ header{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  bottom: 0;
 }
 header:hover{
   width: 16vw;
