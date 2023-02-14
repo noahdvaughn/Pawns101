@@ -145,6 +145,7 @@ module.exports = {
   getAllPlayers,
   getPlayerById,
   getOpeningById,
+  getOpeningByName,
   editPlayer,
   editOpening,
   deletePlayer,
