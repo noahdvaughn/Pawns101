@@ -24,6 +24,13 @@ const PlayerDetails = () => {
       )
     }
   }
+  const DisplayBio = () => {
+    if (player.bio) {
+      return <h1>About: {player.bio}</h1>
+    } else {
+      return
+    }
+  }
   return (
     <div className="form">
       <PlayerPic />
@@ -31,6 +38,7 @@ const PlayerDetails = () => {
       <h1>Nationality: {player.nationality}</h1>
       <h1>Age: {player.age}</h1>
       <DisplayElo />
+      <DisplayBio />
       <h1>Favorite Opening: {player.favorite_opening}</h1>
       <Link to={`/edit-player/${player._id}`} state={{ player: player }}>
         <button>Edit Player?</button>

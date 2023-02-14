@@ -11,6 +11,7 @@ const CreatePlayerForm = () => {
     elo: '',
     age: '',
     profile_url: '',
+    bio: '',
     favorite_opening: ''
   }
   const [formState, setFormState] = useState(initialState)
@@ -87,6 +88,13 @@ const CreatePlayerForm = () => {
           type="text"
           onChange={handleChange}
           value={formState.profile_url}
+        />
+        <label htmlFor="bio">Bio:</label>
+        <input
+          id="bio"
+          type="text"
+          onChange={handleChange}
+          value={formState.bio}
         />
         <label htmlFor="favorite_opening">Favorite Opening</label>
         <select

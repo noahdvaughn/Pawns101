@@ -8,6 +8,7 @@ const Player = new Schema(
     elo: { type: String },
     age: { type: String, required: true },
     profile_url: { type: String },
+    bio: { type: String },
     favorite_opening: { type: String }
   },
   { timestamps: true }

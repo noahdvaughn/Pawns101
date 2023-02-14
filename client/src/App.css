@@ -18,12 +18,11 @@ body{
   justify-content: center;
 }
 .pageTitle{
-  background-color: #769656;
-  border-radius: 10px;
-  padding: 5px;
+  /* background-color: #769656; */
+  /* border-radius: 10px; */
+  /* padding: 10px; */
   color: #FFFFFF;
-
-  
+  text-shadow: 0px 0px 20px #769656;
 }
 .siteLogo{
   right: 10px;
@@ -128,7 +127,7 @@ h1{
 .playerLink{
   transition: all 0.3s;
   text-decoration: none;
-  margin-bottom: 5vw;
+  margin-bottom: 3vw;
 }
 .playerLinkDiv{
   display: flex;
@@ -152,8 +151,6 @@ h1{
 .displayProfilePic{
   max-width: 50vw;
   border-radius: 25px;
-
-
 }
 
 .openingTitle{
