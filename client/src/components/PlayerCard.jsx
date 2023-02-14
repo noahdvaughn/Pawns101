@@ -1,8 +1,19 @@
 import {Link} from 'react-router-dom'
 const PlayerCard = ({player}) => {
 
-  return <Link to={`/player-details/${player._id}`} state={{player:player}}className='player-link'>
+  const PlayerPic = () => {
+    if (player.PlayerPic){
+      return 
+    } else {
+      return <img className='profilePic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_KlnkAkrr10HZoUii1ShdmCDN25m-Ovg7A&usqp=CAU'/>
+    }
+  }
+
+  return <Link to={`/player-details/${player._id}`} state={{player:player}}className='playerLink'>
+    <div className='playerLinkDiv'>
+    <PlayerPic/>
     <h1 >{player.name}({player.elo})</h1>
+    </div>
   </Link>
 }
 export default PlayerCard

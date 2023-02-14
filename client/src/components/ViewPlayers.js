@@ -18,9 +18,11 @@ const ViewPlayers = () => {
   return (
     <div>
       <h1>Players</h1>
-      {playerResults.map((result) => (
-        <PlayerCard key={result._id} player={result} />
-      ))}
+      <div className="playerList">
+        {playerResults.map((result) => (
+          <PlayerCard key={result._id} player={result} />
+        ))}
+      </div>
     </div>
   )
 }

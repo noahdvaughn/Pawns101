@@ -104,17 +104,25 @@ h1{
   max-width: 30vh;
   margin: 10px;
 }
-.player-link{
-  max-width: 30vh;
+.playerLink{
   transition: all 0.3s;
-
   text-decoration: none;
+  margin-bottom: 2vw;
 }
-.player-link:hover{
+.playerLinkDiv{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.playerLink:hover{
   text-decoration: white underline;
   transform: scale(1.1);
   transition: all 0.1s;
-
+}
+.playerList{
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
 }
 .openingTitle{
   margin-top: -2vh;
@@ -149,5 +157,9 @@ input{
 }
 input:focus{
   outline: 2px solid #769656;
+}
+
+.profilePic{
+  width: 5vw;
 }
 
