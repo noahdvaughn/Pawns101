@@ -20,7 +20,6 @@ const CreatePlayerForm = () => {
       const openingResponse = await axios.get(
         'http://localhost:3001/api/all-openings'
       )
-      console.log(openingResponse.data.openings)
       setOpeningResults(openingResponse.data.openings)
     }
     getAllOpenings()
@@ -50,50 +49,53 @@ const CreatePlayerForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <h1>Create Player</h1>
-      <label htmlFor="name">Name:</label>
-      <input
-        id="name"
-        type="text"
-        onChange={handleChange}
-        value={formState.name}
-      />
-      <label htmlFor="nationality">Nationality:</label>
-      <input
-        id="nationality"
-        type="text"
-        onChange={handleChange}
-        value={formState.nationality}
-      />
-      <label htmlFor="elo">Elo:</label>
-      <input
-        id="elo"
-        type="text"
-        onChange={handleChange}
-        value={formState.elo}
-      />
-      <label htmlFor="age">Age:</label>
-      <input
-        id="age"
-        type="text"
-        onChange={handleChange}
-        value={formState.age}
-      />
-      <label htmlFor="favorite_opening">Favorite Opening</label>
-      <select
-        id="favorite_opening"
-        type="text"
-        onChange={handleChange}
-        value={formState.favorite_opening}
-      >
-        {openingResults.map((result) => (
-          <option key={result._id}>{result.name}</option>
-        ))}
-      </select>
+    <div>
+      <form onSubmit={handleSubmit} className="form">
+        <h1>Create Player</h1>
+        <label htmlFor="name">Name:</label>
+        <input
+          id="name"
+          type="text"
+          onChange={handleChange}
+          value={formState.name}
+        />
+        <label htmlFor="nationality">Nationality:</label>
+        <input
+          id="nationality"
+          type="text"
+          onChange={handleChange}
+          value={formState.nationality}
+        />
+        <label htmlFor="elo">Elo:</label>
+        <input
+          id="elo"
+          type="text"
+          onChange={handleChange}
+          value={formState.elo}
+        />
+        <label htmlFor="age">Age:</label>
+        <input
+          id="age"
+          type="text"
+          onChange={handleChange}
+          value={formState.age}
+        />
+        <label htmlFor="favorite_opening">Favorite Opening</label>
+        <select
+          id="favorite_opening"
+          type="text"
+          onChange={handleChange}
+          value={formState.favorite_opening}
+        >
+          {openingResults.map((result) => (
+            <option key={result._id}>{result.name}</option>
+          ))}
+        </select>
 
-      <ValidButton />
-    </form>
+        <ValidButton />
+      </form>
+      <iframe src="https://lichess.org/tv/frame?theme=green&bg=dark"></iframe>
+    </div>
   )
 }
 export default CreatePlayerForm

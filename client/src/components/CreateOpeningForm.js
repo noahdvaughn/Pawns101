@@ -64,78 +64,81 @@ const CreateOpeningForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <h1>Create Opening</h1>
-      <label htmlFor="name">Name:</label>
-      <input
-        id="name"
-        type="text"
-        onChange={handleChange}
-        value={formState.name}
-      />
-      <label htmlFor="master_win">Win percent:</label>
-      <input
-        id="master_win"
-        type="text"
-        onChange={handleChange}
-        value={formState.master_win}
-      />
-      <label htmlFor="master_lose">Lose percent:</label>
-      <input
-        id="master_lose"
-        type="text"
-        onChange={handleChange}
-        value={formState.master_lose}
-      />
-      <label htmlFor="master_draw">Draw percent:</label>
-      <input
-        id="master_draw"
-        type="text"
-        onChange={handleChange}
-        value={formState.master_draw}
-      />
-      <label htmlFor="opening_url">Add Image URL:</label>
-      <input
-        id="opening_url"
-        type="text"
-        onChange={handleChange}
-        value={formState.opening_url}
-      />
-      <label htmlFor="move_list" className={invisible}>
-        Move {movenum}
-      </label>
-      <input
-        id="current_move"
-        type="text"
-        onChange={handleMoveChange}
-        className={invisible}
-        value={current_move}
-      />
-
-      <div className="buttonDiv">
-        <button
-          type="button"
-          id="move_list"
+    <div>
+      <form onSubmit={handleSubmit} className="form">
+        <h1>Create Opening</h1>
+        <label htmlFor="name">Name:</label>
+        <input
+          id="name"
+          type="text"
+          onChange={handleChange}
+          value={formState.name}
+        />
+        <label htmlFor="master_win">Win percent:</label>
+        <input
+          id="master_win"
+          type="text"
+          onChange={handleChange}
+          value={formState.master_win}
+        />
+        <label htmlFor="master_lose">Lose percent:</label>
+        <input
+          id="master_lose"
+          type="text"
+          onChange={handleChange}
+          value={formState.master_lose}
+        />
+        <label htmlFor="master_draw">Draw percent:</label>
+        <input
+          id="master_draw"
+          type="text"
+          onChange={handleChange}
+          value={formState.master_draw}
+        />
+        <label htmlFor="opening_url">Add Image URL:</label>
+        <input
+          id="opening_url"
+          type="text"
+          onChange={handleChange}
+          value={formState.opening_url}
+        />
+        <label htmlFor="move_list" className={invisible}>
+          Move {movenum}
+        </label>
+        <input
+          id="current_move"
+          type="text"
+          onChange={handleMoveChange}
           className={invisible}
-          onClick={addMove}
-        >
-          + Add Move
-        </button>
+          value={current_move}
+        />
 
-        <button
-          type="button"
-          id="move_list"
-          className={movenum === 1 ? 'invisible' : ''}
-          onClick={deleteMove}
-        >
-          - Delete Move
-        </button>
-      </div>
-      {formState.move_list.map((move) => (
-        <h3 key={move}>Move:{move}</h3>
-      ))}
-      <ValidButton />
-    </form>
+        <div className="buttonDiv">
+          <button
+            type="button"
+            id="move_list"
+            className={invisible}
+            onClick={addMove}
+          >
+            + Add Move
+          </button>
+
+          <button
+            type="button"
+            id="move_list"
+            className={movenum === 1 ? 'invisible' : ''}
+            onClick={deleteMove}
+          >
+            - Delete Move
+          </button>
+        </div>
+        {formState.move_list.map((move) => (
+          <h3 key={move}>Move:{move}</h3>
+        ))}
+        <ValidButton />
+      </form>
+      <iframe src="https://lichess.org/tv/frame?theme=green&bg=dark"></iframe>
+    </div>
   )
 }
 export default CreateOpeningForm
