@@ -64,6 +64,20 @@ const getOpeningById = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getOpeningByName = async (req, res) => {
+  try {
+    const { id } = req.params
+    const opening = await Opening.find({ name: `${id}` })
+    if (opening) {
+      return res.status(200).json({ opening })
+    }
+    return res
+      .status(404)
+      .send('Opening with the specified name does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 const getTopPlayers = async (req, res) => {
   try {
     const { id } = req.params
