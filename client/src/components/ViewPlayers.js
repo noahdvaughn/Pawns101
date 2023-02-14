@@ -19,7 +19,7 @@ const ViewPlayers = () => {
     <div>
       <div className="topText">
         <h1>Players</h1>
-        <h1 className="siteLogo">Pawns 101</h1>
+        <h1 className="siteLogo">Pawns ♜o♜</h1>
       </div>
       <div className="playerList">
         {playerResults.map((result) => (
