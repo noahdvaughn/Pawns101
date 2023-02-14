@@ -12,9 +12,21 @@ const PlayerDetails = () => {
       return
     }
   }
-
+  const PlayerPic = () => {
+    if (player.profile_url) {
+      return <img className="displayProfilePic" src={`${player.profile_url}`} />
+    } else {
+      return (
+        <img
+          className="displayProfilePic"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_KlnkAkrr10HZoUii1ShdmCDN25m-Ovg7A&usqp=CAU"
+        />
+      )
+    }
+  }
   return (
     <div className="form">
+      <PlayerPic />
       <h1>Name: {player.name}</h1>
       <h1>Nationality: {player.nationality}</h1>
       <h1>Age: {player.age}</h1>
