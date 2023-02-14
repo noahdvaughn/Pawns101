@@ -61,6 +61,7 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
 
   return (
     <form onSubmit={handleSubmit} className="editForm">
+      <h1>Edit Player</h1>
       <label htmlFor="name">Name:</label>
       <input
         id="name"
