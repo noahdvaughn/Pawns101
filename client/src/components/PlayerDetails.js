@@ -1,9 +1,22 @@
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const PlayerDetails = () => {
   const location = useLocation()
   const { player } = location.state
+  const [openingResults, setOpeningResults] = useState([])
+
+  useEffect(() => {
+    const getAllOpenings = async () => {
+      const openingResponse = await axios.get(
+        `http://localhost:3001/api/opening-search/${player.favorite_opening}`
+      )
+      setOpeningResults(openingResponse.data.opening[0])
+    }
+    getAllOpenings()
+  }, [])
 
   const DisplayElo = () => {
     if (player.elo) {
@@ -39,7 +52,13 @@ const PlayerDetails = () => {
       <h1>Age: {player.age}</h1>
       <DisplayElo />
       <DisplayBio />
-      <h1>Favorite Opening: {player.favorite_opening}</h1>
+      <Link
+        to={`/opening-details/${openingResults._id}`}
+        state={{ opening: openingResults }}
+      >
+        <h1>Favorite Opening: {player.favorite_opening}</h1>
+      </Link>
+
       <Link to={`/edit-player/${player._id}`} state={{ player: player }}>
         <button>Edit Player?</button>
       </Link>
