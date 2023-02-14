@@ -17,7 +17,10 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
+      <div className="topText">
+        <h1>Openings</h1>
+        <h1 className="siteLogo">Pawns ♜o♜</h1>
+      </div>
       <div className="homeBody">
         {openingResults.map((result) => (
           <OpeningCard key={result._id} opening={result} />

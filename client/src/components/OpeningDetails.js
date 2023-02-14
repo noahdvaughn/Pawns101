@@ -37,7 +37,12 @@ const OpeningDetails = () => {
         <div>
           <h2>Top Players:</h2>
           {topPlayerResults.map((result) => (
-            <h2 key={result._id}>{result.name}</h2>
+            <Link
+              to={`/player-details/${result._id}`}
+              state={{ player: result }}
+            >
+              <h2 key={result._id}>{result.name}</h2>
+            </Link>
           ))}
         </div>
       )

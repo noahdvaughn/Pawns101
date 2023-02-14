@@ -13,6 +13,18 @@ body{
   flex-wrap: wrap;
   justify-content: center ;
 }
+.topText{
+  display: flex;
+  justify-content: center;
+}
+.siteLogo{
+  right: 10px;
+  position: absolute;
+  background-color: #769656;
+  border-radius: 10px;
+  font-family:  Copperplate;
+  text-shadow: 2px 2px #181818;
+}
 .invisible{
   display: none;
 }
