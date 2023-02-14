@@ -29,7 +29,6 @@ const OpeningDetails = () => {
     }
     getTopPlayers()
   }, [])
-  console.log(topPlayerResults)
 
   const NotablePlayersDisplay = () => {
     if (topPlayerResults != '') {
@@ -41,6 +40,7 @@ const OpeningDetails = () => {
               to={`/player-details/${result._id}`}
               state={{ player: result }}
               style={{ textDecoration: 'white underline' }}
+              key={result._id}
             >
               <h2 key={result._id}>{result.name}</h2>
             </Link>

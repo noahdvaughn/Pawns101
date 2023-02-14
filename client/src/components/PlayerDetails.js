@@ -20,7 +20,7 @@ const PlayerDetails = () => {
 
   const DisplayElo = () => {
     if (player.elo) {
-      return <h1>Elo: {player.elo}</h1>
+      return <h2>Elo: {player.elo}</h2>
     } else {
       return
     }
@@ -39,7 +39,7 @@ const PlayerDetails = () => {
   }
   const DisplayBio = () => {
     if (player.bio) {
-      return <h1>About: {player.bio}</h1>
+      return <h2>About: {player.bio}</h2>
     } else {
       return
     }
@@ -47,17 +47,21 @@ const PlayerDetails = () => {
   return (
     <div className="form">
       <PlayerPic />
-      <h1>Name: {player.name}</h1>
-      <h1>Nationality: {player.nationality}</h1>
-      <h1>Age: {player.age}</h1>
+      <h2>Name: {player.name}</h2>
+      <h2>Nationality: {player.nationality}</h2>
+      <h2>Age: {player.age}</h2>
       <DisplayElo />
       <DisplayBio />
-      <Link
-        to={`/opening-details/${openingResults._id}`}
-        state={{ opening: openingResults }}
-      >
-        <h1>Favorite Opening: {player.favorite_opening}</h1>
-      </Link>
+      <div>
+        <h2>Favorite Opening:</h2>
+        <Link
+          to={`/opening-details/${openingResults._id}`}
+          state={{ opening: openingResults }}
+          style={{ textDecoration: 'white underline' }}
+        >
+          <h2>{player.favorite_opening}</h2>
+        </Link>
+      </div>
 
       <Link to={`/edit-player/${player._id}`} state={{ player: player }}>
         <button>Edit Player?</button>
