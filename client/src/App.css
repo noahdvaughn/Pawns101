@@ -104,10 +104,11 @@ h1{
   max-width: 30vh;
   margin: 10px;
 }
+
 .playerLink{
   transition: all 0.3s;
   text-decoration: none;
-  margin-bottom: 2vw;
+  margin-bottom: 5vw;
 }
 .playerLinkDiv{
   display: flex;
@@ -122,8 +123,13 @@ h1{
 .playerList{
   display: flex;
   flex-direction: column;
-  justify-items: space-between;
 }
+.profilePic{
+  object-fit: cover;
+  max-width: 5vw;
+  max-height: 5vw;
+}
+
 .openingTitle{
   margin-top: -2vh;
 }
@@ -159,7 +165,4 @@ input:focus{
   outline: 2px solid #769656;
 }
 
-.profilePic{
-  width: 5vw;
-}
 
