@@ -133,7 +133,7 @@ const CreateOpeningForm = () => {
           </button>
         </div>
         {formState.move_list.map((move) => (
-          <h3 key={move}>Move:{move}</h3>
+          <h3 key={move}>{move}</h3>
         ))}
         <ValidButton />
       </form>

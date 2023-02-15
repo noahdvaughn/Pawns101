@@ -17,7 +17,7 @@ const EditOpeningForm = () => {
     opening_url: opening.opening_url
   }
   const [formState, setFormState] = useState(initialState)
-  const [movenum, setMovenum] = useState(1)
+  const [movenum, setMovenum] = useState(opening.move_list.length + 1)
   const handleChange = (event) => {
     event.preventDefault()
     setFormState({ ...formState, [event.target.id]: event.target.value })
@@ -108,7 +108,7 @@ const EditOpeningForm = () => {
         value={formState.opening_url}
       />
       <label htmlFor="move_list" className={invisible}>
-        Moves
+        Move {movenum}
       </label>
       <input
         id="current_move"
@@ -138,7 +138,7 @@ const EditOpeningForm = () => {
       </div>
 
       {formState.move_list.map((move) => (
-        <div key={move}>Move:{move}</div>
+        <h3 key={move}>{move}</h3>
       ))}
       <ValidButton />
       <button onClick={deleteOpening}>Delete Opening?</button>

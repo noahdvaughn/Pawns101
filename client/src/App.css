@@ -12,15 +12,14 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center ;
+  max-width: 70vw;
 }
 .topText{
   display: flex;
   justify-content: center;
 }
 .pageTitle{
-  /* background-color: #769656; */
-  /* border-radius: 10px; */
-  /* padding: 10px; */
+
   color: #FFFFFF;
   text-shadow: 0px 0px 20px #769656;
 }
@@ -48,6 +47,10 @@ header{
   width: 5vw;
   overflow: hidden;
 }
+header:hover{
+  width: 14vw;
+  transition: all 0.3s;
+}
 .navIcon{
   width: 5vw;
   object-fit: contain;
@@ -57,10 +60,6 @@ header{
   flex-direction: column;
   justify-content: flex-end;
   bottom: 0;
-}
-header:hover{
-  width: 16vw;
-  transition: all 0.3s;
 }
 .navItem{
   display: flex;
@@ -185,7 +184,7 @@ input{
 input:focus{
   outline: 2px solid #769656;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .navItem{
     font-size: 2vw;
     
