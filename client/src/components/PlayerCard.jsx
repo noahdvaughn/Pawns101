@@ -12,7 +12,7 @@ const PlayerCard = ({player}) => {
   return <Link to={`/player-details/${player._id}`} state={{player:player}}className='playerLink'>
     <div className='playerLinkDiv'>
     <PlayerPic/>
-    <h1 >{player.name}({player.elo})</h1>
+    <h1 className='thinLetters' >{player.name}({player.elo})</h1>
     </div>
   </Link>
 }

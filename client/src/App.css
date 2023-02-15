@@ -7,6 +7,11 @@ body{
   flex-direction: row;
   justify-content: center;
 }
+.filterButtons:hover {
+  transition: all 0.3s;
+  transform: scale(1.2);
+
+}
 .homeBody{
   display: flex;
   flex-direction: row;
@@ -17,11 +22,18 @@ body{
 .topText{
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.thinLetters{
+  font-weight: 500;
 }
 .pageTitle{
-
   color: #FFFFFF;
-  text-shadow: 0px 0px 20px #769656;
+  text-decoration: underline #769656;
+  font-stretch: ultra-expanded;
+  font-weight: 900;
+  font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 5vh;
 }
 .siteLogo{
   right: 10px;
@@ -30,6 +42,8 @@ body{
   border-radius: 10px;
   font-family:  Copperplate;
   text-shadow: 2px 2px #181818;
+  transition: all 0.3s;
+
 }
 .invisible{
   display: none;
@@ -51,6 +65,35 @@ header:hover{
   width: 14vw;
   transition: all 0.3s;
 }
+.filterIcon{
+  max-width: 4vh;
+  max-height: 4vh;
+  object-fit: contain;
+  background-color: #769656;
+  border-radius: 5px;
+  margin-left: 1vw;
+  transition: all 0.1s;
+}
+.filterIcon:hover{
+  transition: all 0.1s;
+  transform: scale(1.2);
+}
+.filterButtonDiv{
+  display: flex;
+  justify-content: center;
+  transition: all 2s;
+
+}
+.filterButtons{
+  margin: 0 1vw ;
+  background-color: #769656;
+  border-radius: 4px;
+  padding: 5px;
+  transition: all 0.3s;
+
+
+
+}
 .navIcon{
   width: 5vw;
   object-fit: contain;
@@ -68,7 +111,7 @@ header:hover{
   transition: all 0.3s;
 
 }
-.navItem:hover{
+.navItem:hover, .siteLogo:hover{
   transform: scale(1.1);
   transition: all 0.3s;
 }
@@ -126,6 +169,9 @@ h1{
   transition: all 0.3s;
   text-decoration: none;
   margin-bottom: 3vw;
+  background-color: #404040;
+  border-radius: 2vh;
+  height: 5vw;
 }
 .playerLinkDiv{
   display: flex;
@@ -145,6 +191,8 @@ h1{
   object-fit: cover;
   max-width: 5vw;
   max-height: 5vw;
+  border-radius: 2vh;
+
 }
 .displayProfilePic{
   max-width: 50vw;
