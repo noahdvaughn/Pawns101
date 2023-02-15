@@ -33,6 +33,7 @@ const CreatePlayerForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+
     await axios.post('http://localhost:3001/api/create-player', formState)
     setFormState(initialState)
     await navigate('/view-players')
@@ -97,9 +98,10 @@ const CreatePlayerForm = () => {
           value={formState.bio}
         />
         <label htmlFor="favorite_opening">Favorite Opening</label>
+
         <select
           id="favorite_opening"
-          type="text"
+          type="object"
           onChange={handleChange}
           value={formState.favorite_opening}
         >

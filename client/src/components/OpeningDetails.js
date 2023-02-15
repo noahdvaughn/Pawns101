@@ -82,8 +82,6 @@ const OpeningDetails = () => {
     }
   }
 
-  const NotablePlayers = () => {}
-
   chessUrl += `&ply=${openingLength}`
   return (
     <div className="form">

@@ -8,6 +8,8 @@ const PlayerDetails = () => {
   const { player } = location.state
   const [openingResults, setOpeningResults] = useState([])
 
+  console.log(player.favorite_opening)
+
   useEffect(() => {
     const getAllOpenings = async () => {
       const openingResponse = await axios.get(
