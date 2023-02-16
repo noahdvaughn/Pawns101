@@ -59,7 +59,7 @@ const CreateOpeningForm = () => {
         </button>
       )
     } else {
-      return <h3>(Name and Move 1 are required)</h3>
+      return <h3>Name and Move 1 are required</h3>
     }
   }
 

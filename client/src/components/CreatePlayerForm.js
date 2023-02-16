@@ -45,7 +45,7 @@ const CreatePlayerForm = () => {
         </button>
       )
     } else {
-      return <h3>(Name, Nationality, and Age are required)</h3>
+      return <h3>Name, Nationality, and Age are required</h3>
     }
   }
 

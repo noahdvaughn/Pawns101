@@ -56,7 +56,7 @@ const EditOpeningForm = () => {
         </button>
       )
     } else {
-      return <h4>(Name and move 1 are required)</h4>
+      return <h4>Name and move 1 are required</h4>
     }
   }
   const deleteOpening = async () => {
