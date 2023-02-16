@@ -66,7 +66,7 @@ const EditOpeningForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="editForm">
-      <h1>Edit Opening</h1>
+      <h1 className="pageTitle">Edit Opening</h1>
       <label htmlFor="name">Name:</label>
       <input
         id="name"

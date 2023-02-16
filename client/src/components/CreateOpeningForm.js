@@ -66,46 +66,52 @@ const CreateOpeningForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="form">
-        <h1>Create Opening</h1>
-        <label htmlFor="name">Name:</label>
+        <h1 className="pageTitle">Create Opening</h1>
+        {/* <label htmlFor="name">Name:</label> */}
         <input
           id="name"
           type="text"
+          placeholder="Name"
           onChange={handleChange}
           value={formState.name}
         />
-        <label htmlFor="master_win">Win percent:</label>
+        {/* <label htmlFor="master_win">Win percent:</label> */}
         <input
+          placeholder="Win Percent"
           id="master_win"
           type="text"
           onChange={handleChange}
           value={formState.master_win}
         />
-        <label htmlFor="master_lose">Lose percent:</label>
+        {/* <label htmlFor="master_lose">Lose percent:</label> */}
         <input
+          placeholder="Lose Percent"
           id="master_lose"
           type="text"
           onChange={handleChange}
           value={formState.master_lose}
         />
-        <label htmlFor="master_draw">Draw percent:</label>
+        {/* <label htmlFor="master_draw">Draw percent:</label> */}
         <input
+          placeholder="Draw Percent"
           id="master_draw"
           type="text"
           onChange={handleChange}
           value={formState.master_draw}
         />
-        <label htmlFor="opening_url">Add Image URL:</label>
+        {/* <label htmlFor="opening_url">Add Image URL:</label> */}
         <input
+          placeholder="Opening URL"
           id="opening_url"
           type="text"
           onChange={handleChange}
           value={formState.opening_url}
         />
-        <label htmlFor="move_list" className={invisible}>
+        {/* <label htmlFor="move_list" className={invisible}>
           Move {movenum}
-        </label>
+        </label> */}
         <input
+          placeholder={`Move ${movenum}`}
           id="current_move"
           type="text"
           onChange={handleMoveChange}

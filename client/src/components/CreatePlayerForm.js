@@ -52,44 +52,50 @@ const CreatePlayerForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="form">
-        <h1>Create Player</h1>
-        <label htmlFor="name">Name:</label>
+        <h1 className="pageTitle">Create Player</h1>
+        {/* <label htmlFor="name">Name:</label> */}
         <input
+          placeholder="Name"
           id="name"
           type="text"
           onChange={handleChange}
           value={formState.name}
         />
-        <label htmlFor="nationality">Nationality:</label>
+        {/* <label htmlFor="nationality">Nationality:</label> */}
         <input
+          placeholder="Nationality"
           id="nationality"
           type="text"
           onChange={handleChange}
           value={formState.nationality}
         />
-        <label htmlFor="elo">Elo:</label>
+        {/* <label htmlFor="elo">Elo:</label> */}
         <input
+          placeholder="Elo"
           id="elo"
           type="text"
           onChange={handleChange}
           value={formState.elo}
         />
-        <label htmlFor="age">Age:</label>
+        {/* <label htmlFor="age">Age:</label> */}
         <input
+          placeholder="Age"
           id="age"
           type="text"
           onChange={handleChange}
           value={formState.age}
         />
-        <label htmlFor="profile_url">Profile Picture URL:</label>
+        {/* <label htmlFor="profile_url">Profile Picture URL:</label> */}
         <input
+          placeholder="Profile Picture URL"
           id="profile_url"
           type="text"
           onChange={handleChange}
           value={formState.profile_url}
         />
-        <label htmlFor="bio">Bio:</label>
+        {/* <label htmlFor="bio">Bio:</label> */}
         <input
+          placeholder="Bio"
           id="bio"
           type="text"
           onChange={handleChange}

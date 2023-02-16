@@ -7,7 +7,7 @@ body{
   flex-direction: row;
   justify-content: center;
 }
-.filterButtons:hover {
+.filterButtons:hover{
   transition: all 0.3s;
   transform: scale(1.2);
 
@@ -90,9 +90,6 @@ header:hover{
   border-radius: 4px;
   padding: 5px;
   transition: all 0.3s;
-
-
-
 }
 .navIcon{
   width: 5vw;
@@ -123,6 +120,11 @@ button{
   background-color: #282828 ;
   color: white ;
   border-radius: 5px;
+  transition: all 0.2s;
+}
+button:hover{
+  transform: scale(1.1);
+  transition: all 0.2s;
 }
 .form, .editForm{
   background-color: #404040;
@@ -171,7 +173,7 @@ h1{
   margin-bottom: 3vw;
   background-color: #404040;
   border-radius: 2vh;
-  height: 5vw;
+  max-height: 5vw;
 }
 .playerLinkDiv{
   display: flex;
@@ -182,6 +184,8 @@ h1{
   text-decoration: white underline;
   transform: scale(1.1);
   transition: all 0.1s;
+  background-color: #5b5b5b;
+
 }
 .playerList{
   display: flex;
@@ -222,20 +226,28 @@ iframe{
   Border: 0;
   background-color: transparent;
 }
-label{
-  color: white  ;
+ label{
+  color: white;
   font-family: 'Arial Rounded MT Bold';
 }
 input{
+  border: none;
   border-bottom: 4px solid #769656;
+  box-shadow: none;
+  border-radius: 5px;
+  font-family: 'Arial Rounded MT Bold';
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  box-shadow: 0px 0px 2px;
 }
 input:focus{
   outline: 2px solid #769656;
 }
+
 @media (max-width: 1100px) {
   .navItem{
     font-size: 2vw;
-    
 }
 header{
   width: 20vw;
