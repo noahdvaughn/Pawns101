@@ -19,9 +19,7 @@ const CreatePlayerForm = () => {
 
   useEffect(() => {
     const getAllOpenings = async () => {
-      const openingResponse = await axios.get(
-        'http://localhost:3001/api/all-openings'
-      )
+      const openingResponse = await axios.get('/api/all-openings')
       setOpeningResults(openingResponse.data.openings)
     }
     getAllOpenings()
@@ -34,7 +32,7 @@ const CreatePlayerForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    await axios.post('http://localhost:3001/api/create-player', formState)
+    await axios.post('/api/create-player', formState)
     setFormState(initialState)
     await navigate('/view-players')
   }

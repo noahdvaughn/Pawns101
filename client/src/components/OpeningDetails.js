@@ -22,9 +22,7 @@ const OpeningDetails = () => {
 
   useEffect(() => {
     const getTopPlayers = async () => {
-      const playerResponse = await axios.get(
-        `http://localhost:3001/api/top-players/${opening.name}`
-      )
+      const playerResponse = await axios.get(`/api/top-players/${opening.name}`)
       setTopPlayerResults(playerResponse.data.player)
     }
     getTopPlayers()

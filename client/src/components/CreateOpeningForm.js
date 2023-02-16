@@ -30,7 +30,7 @@ const CreateOpeningForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await axios.post('http://localhost:3001/api/create-opening', formState)
+    await axios.post('/api/create-opening', formState)
     setFormState(initialState)
     await navigate('/')
   }

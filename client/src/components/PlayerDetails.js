@@ -13,7 +13,7 @@ const PlayerDetails = () => {
   useEffect(() => {
     const getAllOpenings = async () => {
       const openingResponse = await axios.get(
-        `http://localhost:3001/api/opening-search/${player.favorite_opening}`
+        `/api/opening-search/${player.favorite_opening}`
       )
       setOpeningResults(openingResponse.data.opening[0])
     }

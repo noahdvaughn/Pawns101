@@ -28,10 +28,7 @@ const EditOpeningForm = () => {
   }
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await axios.put(
-      `http://localhost:3001/api/edit-opening/${opening._id}`,
-      formState
-    )
+    await axios.put(`/api/edit-opening/${opening._id}`, formState)
     setFormState(initialState)
     await navigate('/')
   }
@@ -63,9 +60,7 @@ const EditOpeningForm = () => {
     }
   }
   const deleteOpening = async () => {
-    await axios.delete(
-      `http://localhost:3001/api/delete-opening/${opening._id}`
-    )
+    await axios.delete(`/api/delete-opening/${opening._id}`)
     await navigate('/')
   }
 

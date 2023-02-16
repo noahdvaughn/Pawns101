@@ -7,9 +7,7 @@ const ViewPlayers = () => {
 
   useEffect(() => {
     const getAllPlayers = async () => {
-      const playerResponse = await axios.get(
-        'http://localhost:3001/api/all-players'
-      )
+      const playerResponse = await axios.get('/api/all-players')
       setPlayerResults(playerResponse.data.players)
     }
     getAllPlayers()

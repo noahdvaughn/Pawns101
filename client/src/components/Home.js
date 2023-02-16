@@ -11,9 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const getAllOpenings = async () => {
-      const openingResponse = await axios.get(
-        'http://localhost:3001/api/all-openings'
-      )
+      const openingResponse = await axios.get('/api/all-openings')
       setOpeningResults(openingResponse.data.openings)
     }
     getAllOpenings()

@@ -22,9 +22,7 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
 
   useEffect(() => {
     const getAllOpenings = async () => {
-      const openingResponse = await axios.get(
-        'http://localhost:3001/api/all-openings'
-      )
+      const openingResponse = await axios.get('/api/all-openings')
       setOpeningResults(openingResponse.data.openings)
     }
     getAllOpenings()
@@ -36,10 +34,7 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await axios.put(
-      `http://localhost:3001/api/edit-player/${player._id}`,
-      formState
-    )
+    await axios.put(`/api/edit-player/${player._id}`, formState)
     setFormState(initialState)
     await navigate('/view-players')
   }
@@ -56,7 +51,7 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
   }
 
   const deletePlayer = async () => {
-    await axios.delete(`http://localhost:3001/api/delete-player/${player._id}`)
+    await axios.delete(`/api/delete-player/${player._id}`)
     await navigate('/view-players')
   }
 
