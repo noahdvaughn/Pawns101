@@ -31,6 +31,18 @@ Week 6 General Assembly Software Immersive project. A fullstack application that
 
 ### **_Screenshots_**
 
+## Opening Page
+
+![Opening](screenshots/OpeningPage.png)
+
+## Players Page
+
+![Players Page](screenshots/PlayerPage.png)
+
 ### **_Future Updates_**
 
+-[ ] Add calls to Lichess API for position evaluation.
+
 ### **_Credits_**
+
+Game stream widget from Lichess.org
