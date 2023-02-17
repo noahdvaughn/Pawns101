@@ -62,7 +62,7 @@ header{
   overflow: hidden;
 }
 header:hover{
-  width: 14vw;
+  width: 15vw;
   transition: all 0.3s;
 }
 .filterIcon{
@@ -173,7 +173,7 @@ h1{
   margin-bottom: 3vw;
   background-color: #404040;
   border-radius: 2vh;
-  max-height: 5vw;
+  max-height: 100px;
 }
 .playerLinkDiv{
   display: flex;
@@ -192,9 +192,10 @@ h1{
   flex-direction: column;
 }
 .profilePic{
+  max-width: 100px;
+  max-height: 100px;
   object-fit: cover;
-  max-width: 5vw;
-  max-height: 5vw;
+  
   border-radius: 2vh;
 
 }
@@ -267,5 +268,8 @@ header:hover{
   text-decoration: none;
   max-width: 50vw;
   margin: 10vw;
+}
+.playerLink{
+  width: 500px;
 }
 }
