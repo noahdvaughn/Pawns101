@@ -54,7 +54,7 @@ header{
   display: flex;
   flex-direction: column;
   background-color: #769656;
-  height: 100vh;
+  height: 101vh;
   align-items: flex-start;
   justify-content: space-between;
   transition: all 0.3s;
