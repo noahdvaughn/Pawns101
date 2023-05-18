@@ -52,6 +52,7 @@ const EditPlayerForm = ({ name, nationality, elo, age, favorite_opening }) => {
 
   const deletePlayer = async () => {
     await axios.delete(`/api/delete-player/${player._id}`)
+
     await navigate('/view-players')
   }
 
